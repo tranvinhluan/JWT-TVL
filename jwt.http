@@ -1,0 +1,29 @@
+GET http://localhost:5000/books
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRyYW5sdWFuIiwiaWF0IjoxNjU4Nzc2MjIwLCJleHAiOjE2NTg3NzYyNTB9.2NCZqn21WYg6UxN2djHTll8cf_bySLhu0nJ20c58r-I
+//  Bearer accessToken - từ API refreshToken của
+
+###
+POST http://localhost:5500/login 
+Content-Type: application/json
+
+{
+    "username": "tranluan"
+}
+
+###
+POST http://localhost:5500/refreshToken 
+Content-Type: application/json
+// "token": "refreshtoken" từ API login thành công.
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRyYW5sdWFuIiwiaWF0IjoxNjU4Nzc2Nzk2LCJleHAiOjE2NjEzNjg3OTZ9.DSGSqrH_V-27XBGI9hIyhKCBDrbNbENQZ5FqbjWrQlw"
+}
+
+###
+POST http://localhost:5500/logout 
+Content-Type: application/json
+
+// "token" "refreshToken" của người dùng.
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRyYW5sdWFuIiwiaWF0IjoxNjU4Nzc2Nzk2LCJleHAiOjE2NjEzNjg3OTZ9.DSGSqrH_V-27XBGI9hIyhKCBDrbNbENQZ5FqbjWrQlw"
+}
